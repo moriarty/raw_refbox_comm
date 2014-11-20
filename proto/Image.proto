@@ -29,18 +29,29 @@
 package rockin_msgs;
 
 option java_package = "org.rockin.common_msgs";
-option java_outer_classname = "TimeProtos";
+option java_outer_classname = "ImageProtos";
 
-// Time stamp and duration structure.
-// Can be used for absolute times or
-// durations alike.
-message Time {
+message Image {
+  enum CompType {
+    COMP_ID  = 2000;
+    MSG_TYPE = 500;
+  }
 
-  // Time in seconds since the Unix epoch
-  // in UTC or seconds part of duration
-  required int64  sec = 1;
+  // Height of the image in pixels (number of rows)
+  required uint32 height = 1;
 
-  // Nano seconds after seconds for a time
-  // or nanoseconds part for duration
-  required int64 nsec = 2;
+  // Width of the image in pixels (number of columns)
+  required uint32 width = 2;
+
+  // The encoding of the image which is equivalent to the OpenCV types as
+  // defined by the CV_MAKETYPE macros in:
+  // https://github.com/Itseez/opencv/blob/df8e28283f09825cca0c2902160b7abebcfe1b64/modules/core/include/opencv2/core/types_c.h#L561
+  required uint32 encoding = 3;
+
+  // Length of one row in bytes
+  required uint32 step = 4;
+
+  // The pixels of the image according to the specified encoding
+  // There are (width * height) pixels in the array
+  required bytes data = 5;
 }

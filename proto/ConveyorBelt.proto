@@ -29,18 +29,29 @@
 package rockin_msgs;
 
 option java_package = "org.rockin.common_msgs";
-option java_outer_classname = "TimeProtos";
+option java_outer_classname = "ConveyorBeltProtos";
 
-// Time stamp and duration structure.
-// Can be used for absolute times or
-// durations alike.
-message Time {
+enum ConveyorBeltRunMode {
+  STOP  = 0;  // The conveyor belt is standing still
+  START = 1;  // The conveyor belt is moving
+}
 
-  // Time in seconds since the Unix epoch
-  // in UTC or seconds part of duration
-  required int64  sec = 1;
+message ConveyorBeltStatus {
+  enum CompType {
+    COMP_ID  = 2000;
+    MSG_TYPE = 300;
+  }
 
-  // Nano seconds after seconds for a time
-  // or nanoseconds part for duration
-  required int64 nsec = 2;
+  // The current motion state of the conveyor belt
+  required ConveyorBeltRunMode state = 1;
+}
+
+message ConveyorBeltCommand {
+  enum CompType {
+    COMP_ID  = 2000;
+    MSG_TYPE = 301;
+  }
+
+  // The desired motion state of the conveyor belt
+  required ConveyorBeltRunMode command = 1;
 }

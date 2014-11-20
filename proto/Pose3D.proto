@@ -28,19 +28,15 @@
 
 package rockin_msgs;
 
+import "Position3D.proto";
+import "Quaternion.proto";
+
 option java_package = "org.rockin.common_msgs";
-option java_outer_classname = "TimeProtos";
+option java_outer_classname = "Pose3DProtos";
 
-// Time stamp and duration structure.
-// Can be used for absolute times or
-// durations alike.
-message Time {
+message Pose3D {
 
-  // Time in seconds since the Unix epoch
-  // in UTC or seconds part of duration
-  required int64  sec = 1;
+  required Position3D position = 1;
+  required Quaternion orientation = 2;
 
-  // Nano seconds after seconds for a time
-  // or nanoseconds part for duration
-  required int64 nsec = 2;
 }

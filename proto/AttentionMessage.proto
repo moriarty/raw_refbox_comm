@@ -29,18 +29,18 @@
 package rockin_msgs;
 
 option java_package = "org.rockin.common_msgs";
-option java_outer_classname = "TimeProtos";
+option java_outer_classname = "AttentionMessageProtos";
 
-// Time stamp and duration structure.
-// Can be used for absolute times or
-// durations alike.
-message Time {
+message AttentionMessage {
+  enum CompType {
+    COMP_ID  = 2000;
+    MSG_TYPE = 2;
+  }
 
-  // Time in seconds since the Unix epoch
-  // in UTC or seconds part of duration
-  required int64  sec = 1;
-
-  // Nano seconds after seconds for a time
-  // or nanoseconds part for duration
-  required int64 nsec = 2;
+  // The message to display, be brief!
+  required string message = 1;
+  // Time (sec) the msg should be visible
+  optional float  time_to_show = 2;
+  // if the message only regards one team
+  optional string team = 3;
 }

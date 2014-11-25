@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>roah_rsbb_comm</name>
+  <name>raw_refbox_comm</name>
   <version>0.0.0</version>
   <description>The raw_refbox_comm package</description>
 

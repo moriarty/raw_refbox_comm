@@ -1,3 +1,7 @@
+#
+# The file ( copy ... ) statement must be commented out the first time this is run.
+#
+
 find_package(Protobuf REQUIRED)
 include_directories(${PROTOBUF_INCLUDE_DIRS})
 

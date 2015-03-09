@@ -1,10 +1,13 @@
-RoAH RSBB Comm
+RoCKIn at Work UnOfficial Central Factory Hub Communication
 ==============
 
 This repository contains the basic files needed to communicate with
-the RoCKIn@Home Referee, Scoring and Benchmarking Box.
+the RoCKIn@Work Referee, Scoring and Benchmarking Box.
+
+
 
 Here are provided:
+
 
 - The proto files used to communicate;
 - A reduced version of the protobuf_comm library by Tim Niemueller
